@@ -17,7 +17,7 @@ int main(){
         //int remcities = n-i;
         int gasReq = n-i;
 
-       // tank-=1;
+        // tank-=1;
         int remTank = tank;
 
 
@@ -32,7 +32,14 @@ int main(){
             }
             else{
                 cost+=extra_req*i;
-                break;
+                tank+=extra_req;
+            }
+
+// if tanks contents exeed v, we empty the extra amount
+            if(tank>v){
+                int extra = tank-v;
+                tank -= extra;
+                cost-=extra*i;
             }
         } else{
             break;
