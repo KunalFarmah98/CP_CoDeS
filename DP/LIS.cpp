@@ -9,8 +9,13 @@ using namespace std;
 int LIS(int a[], int n){
 
 // dp stores the lengths of LIS ending at index i
- int dp[n+1]={1};
+ int dp[10000]={1};
+
+ for(int i=0; i<=n; i++){
+     dp[i] = 1;
+ }
  // initially all are 1
+
 
  int best=-1;
 
@@ -23,6 +28,8 @@ int LIS(int a[], int n){
  			dp[i]=max(ans,dp[i]);
  		}
  	}
+
+    
  	// finding max LIS length from dp
  	best = max(best,dp[i]);
  }
