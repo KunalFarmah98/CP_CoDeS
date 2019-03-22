@@ -9,8 +9,8 @@ typedef long long ll;
 
 
 ll MOD = 1000003;
-ll n,k;
-ll dp[101][5][101];
+ll n,x;
+ll dp[105][3][105];
 
 
 ll  diw_puzl(ll i, ll prev, ll cnt){
@@ -18,8 +18,9 @@ ll  diw_puzl(ll i, ll prev, ll cnt){
 // if we reach last element
 	if(i==n){
 		// if we have got ans as k, we have found 1 way to do it
-		if(cnt==k)
+		if(cnt==x){
 			return 1;
+		}
 		
 			return 0;
 	}
@@ -69,12 +70,12 @@ int main(){
 
    	memset(dp,-1,sizeof(dp));
   
-   	cin>>n>>k;
+   	cin>>n>>x;
 
    	// we return sum of both cases 
    	// when we put 1 + when we put 0 as we are free to assume any configuration
 
-   	cout<<(diw_puzl(1,0,0)+diw_puzl(1,1,0)%MOD)<<endl;
+   	cout<<(( diw_puzl(1,0,0) + diw_puzl(1,1,0 ))%MOD)<<endl;
    }
 
 
